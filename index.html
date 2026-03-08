@@ -11,6 +11,20 @@
     </style>
   </head>
   <body>
-    <img src="phattie.png"></img>
-  </body>
+    <img id="here" src="phattie.png"></img>
+    
+  <script>
+    // 1. Array of images
+    const images = ["phattie.png", "umbrella.png", "cheese.png"];
+
+    // 2. Get the current hour
+    const currentHour = new Date().getHours();
+
+    // 3. Calculate index (hour mod 3)
+    const index = currentHour % 3;
+
+    // 4. Set the image source
+    document.getElementById("here").src = images[index];
+  </script>
+    </body>
 </html>
