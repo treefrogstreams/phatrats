@@ -5,6 +5,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Kablammo&family=Playwrite+US+Modern:wght@100..400&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+
+      body {
+  font-family: 'Kablammo', sans-serif;
+  font-size: 5rem; /* Adjust size as needed */
+  /* Initially set the font variation setting using the custom property */
+  font-variation-settings: "MORF" var(--morf);
+  transition: --morf 2s ease-in-out infinite alternate; /* Animate the custom property */
+}
+
+/* Change the value of the custom property on a pseudo-class (e.g., hover) 
+   or with keyframes to trigger the animation */
+body:hover {
+  --morf: 60; /* Morph to the 'Eek' style on hover */
+}
+
       img {
   max-width: 100%; /* Ensures the image doesn't exceed its container's width, scaling down if necessary */
   height: auto;    /* Automatically adjusts the height to maintain the image's original aspect ratio */
@@ -21,14 +36,43 @@
   font-variation-settings:
     "MORF" .5;
 }
-      
+          .morphing-text {
+      font-family: 'Kablammo', sans-serif;
+      font-size: 5rem;
+      text-align: center;
+      /* Apply the custom property to the font variation setting */
+      font-variation-settings: "MORF" var(--morf);
+      /* Animate the custom property with keyframes */
+      animation: morph-dance 4s infinite alternate forwards; 
+    }
+
+    @keyframes morph-dance {
+      0% {
+        --morf: 0; /* Zoink */
+      }
+      25% {
+        --morf: 20; /* Bloop */
+      }
+      75% {
+        --morf: 40; /* Splat */
+      }
+      100% {
+        --morf: 60; /* Eek */
+      }
+    }
+      @property --morf {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: false;
+}
+
         
       
     </style>
   </head>
   <body>
     <img id="here" src="phattie.png"></img>
-    <h1 id="h" class="kablammo-1">Check yourself out, cutie</h1>
+    <h1 id="h">Check yourself out, cutie</h1>
     
   <script>
     // 1. Array of images
