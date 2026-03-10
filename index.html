@@ -15,6 +15,15 @@
   -webkit-text-stroke: .5px #8B008B;
   
 }
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body is at least as tall as the screen */
+}
+
+.content {
+  flex: 1; /* This pushes the footer down by taking up all remaining space */
+}
 
 
       img {
@@ -54,7 +63,9 @@
       
     </style>
   </head>
-  <body>
+  <body class="site-container">
+    <header></header>
+    <main class="content">
     <img id="here" src="phattie.png"></img>
     <h1 id="h" class="morphing-text">Check yourself out, cutie</h1>
     
@@ -73,6 +84,7 @@
     document.getElementById("here").src = images[index];
     document.getElementById("h").textContent = headers[index];
   </script>
-    </body>
+    </main>
   <footer>treefrog </footer>
+    </body>
 </html>
