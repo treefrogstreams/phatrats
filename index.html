@@ -12,10 +12,12 @@
   </head>
   <body>
     <img id="here" src="phattie.png"></img>
+    <h1 id="h">Check yourself out, cutie</h1>
     
   <script>
     // 1. Array of images
     const images = ["phattie.png", "umbrella.png", "cheese.png"];
+    const headers = ["Check yourself out, cutie", "It's a fancy umbrella kind of day", "You've had a long day. Have some cheese and tell me about it"];
 
     // 2. Get the current hour
     const currentHour = new Date().getSeconds();
@@ -25,6 +27,7 @@
 
     // 4. Set the image source
     document.getElementById("here").src = images[index];
+    document.getElementById("h").textContent = headers[index];
   </script>
     </body>
 </html>
