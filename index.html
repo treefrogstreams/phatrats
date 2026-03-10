@@ -13,18 +13,26 @@
   color: #1E174B; 
 
   -webkit-text-stroke: .5px #8B008B;
+        margin: 0;
+        overflow: hidden; /* Prevents scrolling so the whole page is visible at once */
+
   
 }
 .site-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures the body is at least as tall as the screen */
+  height: 100vh; /* Ensures the body is at least as tall as the screen */
 }
 
 .content {
+  min-height: 0;
   flex: 1; /* This pushes the footer down by taking up all remaining space */
 }
-
+footer {
+        font-size: 10px;
+        -webkit-text-stroke: 0px; /* Removes thick stroke for readability at small size */
+        padding-bottom: 5px;
+      }
 
       img {
   max-width: 100%; /* Ensures the image doesn't exceed its container's width, scaling down if necessary */
@@ -68,7 +76,8 @@
     <main class="content">
     <img id="here" src="phattie.png"></img>
     <h1 id="h" class="morphing-text">Check yourself out, cutie</h1>
-    
+        </main>
+  <footer>&copy; treefrog</footer>
   <script>
     // 1. Array of images
     const images = ["phattie.png", "umbrella.png", "cheese.png", "dance.png", "bath.png", "frolic.png"];
@@ -84,7 +93,7 @@
     document.getElementById("here").src = images[index];
     document.getElementById("h").textContent = headers[index];
   </script>
-    </main>
-  <footer>treefrog </footer>
+
+
     </body>
 </html>
