@@ -5,16 +5,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Kablammo&family=Playwrite+US+Modern:wght@100..400&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-@property --morf {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: false;
-  
 
-}
       body {
   font-family: 'Kablammo', sans-serif;
-  font-size: 3.5rem; /* Adjust size as needed */
+  font-size: 3.25rem; /* Adjust size as needed */
   /* Initially set the font variation setting using the custom property */
   
 }
@@ -50,26 +44,24 @@ body:hover {
       
       text-align: center;
       /* Apply the custom property to the font variation setting */
-      font-variation-settings: "MORF" var(--morf);
+  
       /* Animate the custom property with keyframes */
       animation: morph-dance .5s infinite alternate forwards; 
     }
 
-    @keyframes morph-dance {
-      0% {
-        --morf: 0; /* Zoink */
-      }
-      25% {
-        --morf: 20; /* Bloop */
-      }
-      75% {
-        --morf: 40; /* Splat */
-      }
-      100% {
-        --morf: 60; /* Eek */
-      }
+  @keyframes morph-dance {
+    0% { 
+      font-variation-settings: "MORF" 0; 
     }
-      
+    33% { 
+      font-variation-settings: "MORF" 20; 
+    }
+    66% { 
+      font-variation-settings: "MORF" 40; 
+    }
+    100% { 
+      font-variation-settings: "MORF" 60; 
+    }
 
 
         
